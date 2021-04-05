@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>culsoft.smartmeter</AssemblyName>
+    <RootNamespace>culsoft.smartmeter</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Gurux.Common" Version="8.1.2103.1001" />
+    <PackageReference Include="Gurux.DLMS" Version="9.0.2103.2202" />
+  </ItemGroup>
+
+</Project>
