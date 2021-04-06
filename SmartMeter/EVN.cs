@@ -56,9 +56,9 @@ namespace culsoft.smartmeter
                 //Spannung L1
                 data.Voltage1 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[1]").Attributes.GetNamedItem("Value").InnerText);
                 //Spannung L2
-                data.Voltage1 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[2]").Attributes.GetNamedItem("Value").InnerText);
+                data.Voltage2 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[2]").Attributes.GetNamedItem("Value").InnerText);
                 //Spannung L3
-                data.Voltage1 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[3]").Attributes.GetNamedItem("Value").InnerText);
+                data.Voltage3 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[3]").Attributes.GetNamedItem("Value").InnerText);
 
                 //Strom L1
                 data.Current1 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[4]").Attributes.GetNamedItem("Value").InnerText);
