@@ -40,7 +40,10 @@ namespace culsoft.smartmeter.datareader
                 Console.WriteLine("Momentanleistung eingespeist: " + dr.ActivePowerNegative);
                 Console.WriteLine("Spannung L1: " + dr.Voltage1);
                 Console.WriteLine("Strom L1: " + dr.Current1);
-
+                Console.WriteLine("Spannung L2: " + dr.Voltage2);
+                Console.WriteLine("Strom L2: " + dr.Current2);
+                Console.WriteLine("Spannung L3: " + dr.Voltage3);
+                Console.WriteLine("Strom L3: " + dr.Current3);
                 counter++;
             }
 
