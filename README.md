@@ -1,7 +1,7 @@
 # Introduction
-This project is an implementation for reading data from Austrian smart meters, currently focusing on NÖ Netze/EVN and WienerNetze.
+This project is an implementation for reading data from Austrian smart meters, currently focusing on NÃ– Netze/EVN and WienerNetze.
 
-The data provided by the smart meter is encrypted through "DLMS Security Suite 0, HLS5" according to NÖ Netze. In .net language this means you can use the (AesGcm)[https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.aesgcm?view=net-5.0] library for encrypting the data.
+The data provided by the smart meter is encrypted through "DLMS Security Suite 0, HLS5" according to NÃ– Netze. In .net language this means you can use the [AesGcm](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.aesgcm?view=net-5.0) library for encrypting the data.
 
 # Technology Stack
 The base library is developed in C# based on .NET Core 3.1.
@@ -9,13 +9,13 @@ There are to sample console applications, on in C# and one in VB.net also both i
 
 # Pre-Requisites / Dependencies
 Two nuget packages are used for the processing of the decrypted data.
-- (Gurux.Common)[https://www.nuget.org/packages/Gurux.Common]
-- (Gurus.DLMS)[https://www.nuget.org/packages/Gurux.DLMS]
+- [Gurux.Common](https://www.nuget.org/packages/Gurux.Common)
+- [Gurus.DLMS](https://www.nuget.org/packages/Gurux.DLMS)
 
 # General Notes
 This code hat not jet been tested with a direct integration to a smart meter, but reads the data provided by the smart meter from a provided file.
 
-Currently there is only an implementation for the NÖ Netze / EVN smart meter. An implementation for the WienerNetze is pending, due to an open ticket with them.
+Currently there is only an implementation for the NÃ– Netze / EVN smart meter. An implementation for the WienerNetze is pending, due to an open ticket with them.
 
 To be able to decrypt the data, AesGcm encrypt has to be used and not decrypt. (don't ask why)
 
@@ -38,7 +38,7 @@ This is an example format of the file:
 08:05:00	<HEXValue from the meter>
 08:10:00	<HEXValue from the meter>
 
-For NÖ Netze the HEXValue is 564 long.
+For NÃ– Netze the HEXValue is 564 long.
 
 # Disclaimer
 The code is provided as is and not ready to be used in an production environment.
