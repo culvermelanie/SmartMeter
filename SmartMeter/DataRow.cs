@@ -83,6 +83,13 @@ namespace culsoft.smartmeter
         public UInt16 Current3 { get; set; } //Gurux.DLMS.Enums.Unit.Current
 
         /// <summary>
+        /// Leistungsfaktor
+        /// 1
+        /// Wert x10-3
+        /// </summary>
+        public Int16 PowerFactor { get; set; }
+
+        /// <summary>
         /// The original XML from the Gurux library.
         /// </summary>
         public String XML { get; set; }
