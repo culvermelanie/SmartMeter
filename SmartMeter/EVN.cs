@@ -66,7 +66,10 @@ namespace culsoft.smartmeter
                 data.Current2 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[5]").Attributes.GetNamedItem("Value").InnerText);
                 //Strom L3
                 data.Current3 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[6]").Attributes.GetNamedItem("Value").InnerText);
+                
                 //Leistungsfaktor
+                data.PowerFactor = Int16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/Int16[1]").Attributes.GetNamedItem("Value").InnerText);
+
 
                 //Zählernummer
                 //Todo: there seems to be an issue to extract the right meter number - only looking at the HEX values, the last view characters are far outside of the normal ASCII range :/
