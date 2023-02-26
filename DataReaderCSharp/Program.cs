@@ -8,10 +8,14 @@ namespace culsoft.smartmeter.datareader
         {
             //collect the needed input from user
             Console.WriteLine("Provide decryption Key:");
-            string decryptionKey = Console.ReadLine();
+            //string decryptionKey = Console.ReadLine();
+            // Use static test data:
+            string decryptionKey = "36C66639E48A8CA4D6BC8B282A793BBB";
 
             Console.WriteLine("Provide input file path:");
-            string filename = Console.ReadLine();
+            //string filename = Console.ReadLine();
+            // Use static test data:
+            string filename = "../../../../test_data.txt";
 
             //main processing class for EVN
             EVN evn = new EVN(decryptionKey);
@@ -34,19 +38,22 @@ namespace culsoft.smartmeter.datareader
 
                 //now you can use any of the properties from the converted data row
                 Console.WriteLine(dr.TimeStamp);
-                Console.WriteLine("Wirkenergie zugeführt: " + dr.ActiveEnergyPositive);
-                Console.WriteLine("Wirkenergie eingespeist: " + dr.ActiveEnergyNegative);
-                Console.WriteLine("Momentanleistung zugeführt: " + dr.ActivePowerPositive);
-                Console.WriteLine("Momentanleistung eingespeist: " + dr.ActivePowerNegative);
-                Console.WriteLine("Spannung L1: " + dr.Voltage1);
-                Console.WriteLine("Strom L1: " + dr.Current1);
-                Console.WriteLine("Spannung L2: " + dr.Voltage2);
-                Console.WriteLine("Strom L2: " + dr.Current2);
-                Console.WriteLine("Spannung L3: " + dr.Voltage3);
-                Console.WriteLine("Strom L3: " + dr.Current3);
+                Console.WriteLine("Wirkenergie zugeführt: " + dr.ActiveEnergyPositive + " Wh");
+                Console.WriteLine("Wirkenergie eingespeist: " + dr.ActiveEnergyNegative + " Wh");
+                Console.WriteLine("Momentanleistung zugeführt: " + dr.ActivePowerPositive + " W");
+                Console.WriteLine("Momentanleistung eingespeist: " + dr.ActivePowerNegative + " W");
+                Console.WriteLine("Spannung L1: {0:0.0} V", dr.Voltage1.Value * Math.Pow(10, dr.Voltage1.Scale));
+                Console.WriteLine("Strom L1: {0:0.0} A", dr.Current1.Value * Math.Pow(10, dr.Current1.Scale));
+                Console.WriteLine("Spannung L2: {0:0.0} V", dr.Voltage2.Value * Math.Pow(10, dr.Voltage2.Scale));
+                Console.WriteLine("Strom L2: {0:0.0} A", dr.Current2.Value * Math.Pow(10, dr.Current2.Scale));
+                Console.WriteLine("Spannung L3: {0:0.0} V", dr.Voltage3.Value * Math.Pow(10,dr.Voltage3.Scale));
+                Console.WriteLine("Strom L3: {0:0.0} A", dr.Current3.Value * Math.Pow(10, dr.Current3.Scale));
+                Console.WriteLine("Leistungsfaktor: {0:0.00}", dr.PowerFactor.Value * Math.Pow(10, dr.PowerFactor.Scale));
+                Console.WriteLine("Zählernummer: " + dr.MeterNumber);
                 counter++;
             }
 
+            Console.Write("\nPress any key to continue...");
             Console.Read();
         }
     }

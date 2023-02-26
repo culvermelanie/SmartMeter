@@ -6,9 +6,11 @@ Namespace culsoft.smartmeter.datareader
 
             'collect the needed input from user
             Console.WriteLine("Provide decryption Key:")
-            Dim decryptionKey As String = Console.ReadLine()
+            'Dim decryptionKey As String = Console.ReadLine()
+            Dim decryptionKey = "36C66639E48A8CA4D6BC8B282A793BBB"
             Console.WriteLine("Provide input file path:")
-            Dim filename As String = Console.ReadLine()
+            'Dim filename As String = Console.ReadLine()
+            Dim filename = "../../../../test_data.txt"
 
             'main processing class for EVN
             Dim evn As EVN = New EVN(decryptionKey)
@@ -35,12 +37,13 @@ Namespace culsoft.smartmeter.datareader
                 Console.WriteLine("Wirkenergie eingespeist: " & dr.ActiveEnergyNegative)
                 Console.WriteLine("Momentanleistung zugeführt: " & dr.ActivePowerPositive)
                 Console.WriteLine("Momentanleistung eingespeist: " & dr.ActivePowerNegative)
-                Console.WriteLine("Spannung L1: " & dr.Voltage1)
-                Console.WriteLine("Strom L1: " & dr.Current1)
+                Console.WriteLine("Spannung L1: " & dr.Voltage1.Value / 10)
+                Console.WriteLine("Strom L1: " & dr.Current1.Value / 100)
 
                 counter += 1
             End While
 
+            Console.WriteLine("Press any key to continue...")
             Console.Read()
         End Sub
 
