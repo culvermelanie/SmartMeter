@@ -45,7 +45,7 @@ public class AesGcmEncryption
     public string Encrypt(string HEXMessage)
     {
         string message = HEXMessage.Replace(" ", "");
-        byte[] plainText = HexToByteArray(message.Substring(HeaderLength, message.Length - HeaderLength - END_LENGTH));
+        byte[] plainText = HexToByteArray(message.Substring(HeaderLength, 512 - HeaderLength - END_LENGTH) + message.Substring(512+18, message.Length - (512+18) - END_LENGTH));
         byte[] ciphertext = new byte[plainText.Length];
         byte[] nonce = HexToByteArray(message.Substring(METER_LENGTH, SYSTEM_TITLE_LENGTH) + message.Substring(METER_LENGTH + SYSTEM_TITLE_LENGTH + SECURITY_LENGTH, FRAME_COUNTER_LENGTH));
         using (AesGcm aesGcm = new AesGcm(KEY))

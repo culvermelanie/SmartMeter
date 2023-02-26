@@ -35,10 +35,11 @@ These are sample console applications on how to use the SmartMeter library.
 To test out how things work, start one of the console applications. You will have to provide the decryption you have received from you network provider and the the path to a file containing the smart meter data. 
 
 This is an example format of the file:
+```
 08:05:00	<HEXValue from the meter>
 08:10:00	<HEXValue from the meter>
-
-For NÖ Netze the HEXValue is 564 long.
+```
+Each line consists of a time stamp, followed by a tabulator and a string of hex values. For NÖ Netze the HEXValue is 564 long.
 
 # Disclaimer
 The code is provided as is and not ready to be used in an production environment.

@@ -54,21 +54,28 @@ namespace culsoft.smartmeter
                 data.ActivePowerNegative = UInt32.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt32[4]").Attributes.GetNamedItem("Value").InnerText);
 
                 //Spannung L1
-                data.Voltage1 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[1]").Attributes.GetNamedItem("Value").InnerText);
+                data.Voltage1.Value = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[1]").Attributes.GetNamedItem("Value").InnerText);
+                data.Voltage1.Scale = sbyte.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/Structure[5]/Int8").Attributes.GetNamedItem("Value").InnerText);
                 //Spannung L2
-                data.Voltage2 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[2]").Attributes.GetNamedItem("Value").InnerText);
+                data.Voltage2.Value = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[2]").Attributes.GetNamedItem("Value").InnerText);
+                data.Voltage2.Scale = sbyte.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/Structure[6]/Int8").Attributes.GetNamedItem("Value").InnerText);
                 //Spannung L3
-                data.Voltage3 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[3]").Attributes.GetNamedItem("Value").InnerText);
+                data.Voltage3.Value = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[3]").Attributes.GetNamedItem("Value").InnerText);
+                data.Voltage3.Scale = sbyte.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/Structure[7]/Int8").Attributes.GetNamedItem("Value").InnerText);
 
                 //Strom L1
-                data.Current1 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[4]").Attributes.GetNamedItem("Value").InnerText);
+                data.Current1.Value = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[4]").Attributes.GetNamedItem("Value").InnerText);
+                data.Current1.Scale = sbyte.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/Structure[8]/Int8").Attributes.GetNamedItem("Value").InnerText);
                 //Strom L2
-                data.Current2 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[5]").Attributes.GetNamedItem("Value").InnerText);
+                data.Current2.Value = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[5]").Attributes.GetNamedItem("Value").InnerText);
+                data.Current2.Scale = sbyte.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/Structure[9]/Int8").Attributes.GetNamedItem("Value").InnerText);
                 //Strom L3
-                data.Current3 = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[6]").Attributes.GetNamedItem("Value").InnerText);
-                
+                data.Current3.Value = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[6]").Attributes.GetNamedItem("Value").InnerText);
+                data.Current3.Scale = sbyte.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/Structure[10]/Int8").Attributes.GetNamedItem("Value").InnerText);
+
                 //Leistungsfaktor
-                data.PowerFactor = Int16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/Int16[1]").Attributes.GetNamedItem("Value").InnerText);
+                data.PowerFactor.Value = UInt16.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/UInt16[7]").Attributes.GetNamedItem("Value").InnerText);
+                data.PowerFactor.Scale = sbyte.Parse(root.SelectSingleNode("NotificationBody/DataValue/Structure/Structure[11]/Int8").Attributes.GetNamedItem("Value").InnerText);
 
 
                 //Zählernummer
