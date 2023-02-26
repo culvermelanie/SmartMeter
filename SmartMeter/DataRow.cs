@@ -6,10 +6,10 @@ namespace culsoft.smartmeter
     /// Data object representing one network provider message.
     /// Currently based on the EVN message package.
     /// </summary>
-    public struct Dataset
+    public struct Dataset<T1, T2>
     {
-        public UInt16 Value { get; set; }
-        public sbyte Scale { get; set; } // Int8
+        public T1 Value { get; set; }
+        public T2 Scale { get; set; }
     }
     public class DataRow
     {
@@ -52,45 +52,45 @@ namespace culsoft.smartmeter
         /// Wert x10^-1
         /// V
         /// </summary>
-        public Dataset Voltage1; //Gurux.DLMS.Enums.Unit.Voltage
+        public Dataset<UInt16, sbyte> Voltage1; //Gurux.DLMS.Enums.Unit.Voltage
         /// <summary>
         /// Spannung L2
         /// Wert x10^-1
         /// V
         /// </summary>
-        public Dataset Voltage2; //Gurux.DLMS.Enums.Unit.Voltage
+        public Dataset<UInt16, sbyte> Voltage2; //Gurux.DLMS.Enums.Unit.Voltage
         /// <summary>
         /// Spannung L3
         /// Wert x10^-1
         /// V
         /// </summary>
-        public Dataset Voltage3; //Gurux.DLMS.Enums.Unit.Voltage
+        public Dataset<UInt16, sbyte> Voltage3; //Gurux.DLMS.Enums.Unit.Voltage
 
         /// <summary>
         /// Strom L1
         /// Wert x10^-2
         /// A
         /// </summary>
-        public Dataset Current1; //Gurux.DLMS.Enums.Unit.Current
+        public Dataset<UInt16, sbyte> Current1; //Gurux.DLMS.Enums.Unit.Current
         /// <summary>
         /// Strom L2
         /// Wert x10^-2
         /// A
         /// </summary>
-        public Dataset Current2; //Gurux.DLMS.Enums.Unit.Current
+        public Dataset<UInt16, sbyte> Current2; //Gurux.DLMS.Enums.Unit.Current
         /// <summary>
         /// Strom L3
         /// Wert x10^-2
         /// A
         /// </summary>        
-        public Dataset Current3; //Gurux.DLMS.Enums.Unit.Current
+        public Dataset<UInt16, sbyte> Current3; //Gurux.DLMS.Enums.Unit.Current
 
         /// <summary>
         /// Leistungsfaktor
         /// 1
         /// Wert x10-3
         /// </summary>
-        public Dataset PowerFactor;
+        public Dataset<UInt16, sbyte> PowerFactor;
 
         /// <summary>
         /// The original XML from the Gurux library.
